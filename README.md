@@ -1,4 +1,4 @@
-#简介
+# 简介
 Android的线上ANR问题比较复杂，因为ANR产生机制的原因，通常通过anrtrace的信息，不足以协助分析定位复杂问题发生原因。发生ANR时通常伴随着
 主线程消息队列中的消息的分发耗时延长或者阻塞，所以通过获取ANR发生前一段时间内，程序运行环境中主线程消息队列中的消息分发以及运行状态，能够
 极大的提升问题定位能力。
@@ -16,10 +16,10 @@ Android主线程队列里面特定的消息，在等待了一个超时时间后�
 
 如果你也对安卓的性能和稳定性有兴趣，欢迎共同探讨  hitwh_guoheng@hotmail.com
 
-#检测原理
-##Looper loop()源码
+# 检测原理
+## Looper loop()源码
 
-###关键代码
+### 关键代码
 
 frameworks/base/core/java/android/os/Looper.java
 
