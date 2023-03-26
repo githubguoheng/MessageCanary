@@ -14,8 +14,6 @@ Android主线程队列里面特定的消息，在等待了一个超时时间后�
 基于以上原因，设计了一个高效的主线程消息录制回放的工具，用来对主线程调度的历史、当前以及未来（pendding）的消息进行监控，发
 生ANR时通过观察这些消息的调度耗时情况来辅助定位分析ANR问题，同时也提供了一个卡顿检测的方式，用来辅助分析卡顿问题，提升性能和稳定性
 
-如果你也对安卓的性能和稳定性有兴趣，欢迎共同探讨  hitwh_guoheng@hotmail.com
-
 # 检测原理
 ## Looper loop()源码
 
@@ -174,6 +172,9 @@ frameworks/base/core/java/android/os/Looper.java
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+## Email
+   hitwh_guoheng@hotmail.com
 
 
 
