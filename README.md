@@ -116,9 +116,9 @@ frameworks/base/core/java/android/os/Looper.java
 
 ### 消息聚合策略
 
-1.如果累计的消息分发超过阈值，则形成一个pack
-2.如果单条消息分发超过阈值，则需要单独形成一个pack，之前的累计的消息形成一个pack
-3.自定义消息聚合策略
+*1.如果累计的消息分发超过阈值，则形成一个pack
+*2.如果单条消息分发超过阈值，则需要单独形成一个pack，之前的累计的消息形成一个pack
+*3.自定义消息聚合策略
 
 
 ## 阻塞消息获取
@@ -156,6 +156,17 @@ frameworks/base/core/java/android/os/Looper.java
         }
     }
 ```
+
+## 存在问题
+在实际的线上运行中，一些低端机上以下代码会出现较为明显的CPU消耗超出合理范围的问题, 变量字符串使用+进行拼接，短时间内大量调用的场景，因存在运行时大量创建字符串对象，在性能较差的手机上CPU的波动会比较明显
+```
+             // 关键代码，通过 Printer 来记录 消息分发前后的消息情况 msg.target.dispatchMessage(msg) 
+             if (logging != null) {
+                 logging.println(">>>>> Dispatching to " + msg.target + " " +
+                         msg.callback + ": " + msg.what);
+             }
+```
+
 
 ## License
 
