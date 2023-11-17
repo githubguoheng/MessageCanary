@@ -184,8 +184,5 @@ frameworks/base/core/java/android/os/Looper.java
     See the License for the specific language governing permissions and
     limitations under the License.
 
-## Email
-    hitwh_guoheng@hotmail.com
-
 
 
